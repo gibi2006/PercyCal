@@ -19,7 +19,6 @@ public class CalculatorLogic {
             case "X is what % of Y?" -> {
                 strategy = new XIsWhatPercentOfY();
                 formula = "Formula: (X / Y) * 100";
-                if (y == 0) throw new ArithmeticException("Cannot divide by zero");
                 double result = strategy.calculate(x, y);
                 output = plainFormat.format(x) + " is " + percentFormat.format(result) + " of " + plainFormat.format(y);
             }
