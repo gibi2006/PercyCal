@@ -225,7 +225,7 @@ public class PercentageCalculatorGUI extends JFrame {
             formulaArea.setText(result[1]);
 
         } catch (NumberFormatException e) {
-            resultArea.setText("Please input a digit.");
+            JOptionPane.showMessageDialog(this, "Error: Please input a digit!", "Error!", JOptionPane.ERROR_MESSAGE);
         } catch (ArithmeticException | IllegalArgumentException e) {
             JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
         }
