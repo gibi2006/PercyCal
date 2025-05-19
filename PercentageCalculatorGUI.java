@@ -37,7 +37,7 @@ public class PercentageCalculatorGUI extends JFrame {
         basePanel.setLayout(new BoxLayout(basePanel, BoxLayout.Y_AXIS));
 
         // Title
-        JLabel titleLabel = new JLabel("PERCYCAL"); 
+        JLabel titleLabel = new JLabel("PercyCal"); 
         titleLabel.setFont(new Font("Lucid-Dream", Font.PLAIN, 40));
         titleLabel.setForeground(darkOrange);
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -74,7 +74,8 @@ public class PercentageCalculatorGUI extends JFrame {
         inputY = createTextField(font, orange);
         basePanel.add(centered(createLabeledField("Y:", inputY, font, bgColor)));
         basePanel.add(Box.createVerticalStrut(20));
-
+        
+        // Checks if a number is inputted in the field 
         InputValidator validator = new InputValidator(new Color(255, 150, 75), Color.RED);
         validator.apply(inputX);
         validator.apply(inputY);
@@ -89,7 +90,7 @@ public class PercentageCalculatorGUI extends JFrame {
         topButtonPanel.add(clearButton);
         basePanel.add(topButtonPanel);
 
-        basePanel.add(Box.createVerticalStrut(5));
+        basePanel.add(Box.createVerticalStrut(10));
 
         // 2nd Row button
         JPanel bottomButtonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -159,9 +160,10 @@ public class PercentageCalculatorGUI extends JFrame {
                 JOptionPane.showMessageDialog(this, "Nothing else to copy.", "Warning!", JOptionPane.INFORMATION_MESSAGE);
             }
         });
-
-        inputX.addActionListener(e -> calculate());
-        inputY.addActionListener(e -> calculate());
+        
+        // Makes enter as a way to input the values
+        inputX.addActionListener(calculatemoi2 -> calculate());
+        inputY.addActionListener(calculatemoi2 -> calculate());
     }
 
     private JTextField createTextField(Font font, Color borderColor) {
